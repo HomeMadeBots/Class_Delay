@@ -14,11 +14,6 @@ title Class_Turn_On_Delay multiple //Set()//
 
 caption
 turn on delay = 10s (//Delay_Duration// = 10000)
-
-If //Set()// command is call several time (without
-any call to //Reset()//) only the first has an effect.
-A call to //Set()// when output is alredy //ON// has
-no effect.
 end caption
 
 concise User
