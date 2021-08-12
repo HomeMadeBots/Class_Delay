@@ -1,0 +1,47 @@
+@startuml
+
+!includeurl https://gist.githubusercontent.com/Arnaud-Bonneuil/c317a7a30bed7d64e2b5b1f558ac00cf/raw/sober.plantuml
+
+<style>
+  caption
+  {
+    Margin 20 0 0 0 
+    HorizontalAlignment left
+  }
+</style>
+
+title Class_Turn_On_Off_Delay nominal behavior
+
+caption
+turn on delay = 5s (//Delay_Duration// = 5000)
+turn off delay = 10s (//Off_Delay_Duration// = 10000)
+
+After a call to //Set()//, the output takes
+//Delay_Duration// to be //ON//.
+After a call to //Reset()//, the output takes
+//Off_Delay_Duration// to be //OFF//.
+end caption
+
+concise User
+robust Output
+
+@0
+Output is OFF 
+
+@5
+User --> Output : Set()
+
+@10
+Output is ON
+
+User@5 <->@10 : 5s
+
+@15
+User --> Output : Reset()
+
+@25
+Output is OFF
+
+User@15 <->@25 : 10s
+
+@enduml

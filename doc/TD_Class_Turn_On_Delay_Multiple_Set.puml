@@ -1,0 +1,50 @@
+@startuml
+
+!includeurl https://gist.githubusercontent.com/Arnaud-Bonneuil/c317a7a30bed7d64e2b5b1f558ac00cf/raw/sober.plantuml
+
+<style>
+  caption
+  {
+    Margin 20 0 0 0 
+    HorizontalAlignment left
+  }
+</style>
+
+title Class_Turn_On_Delay multiple //Set()//
+
+caption
+turn on delay = 10s (//Delay_Duration// = 10000)
+
+If //Set()// command is call several time (without
+any call to //Reset()//) only the first has an effect.
+A call to //Set()// when output is alredy //ON// has
+no effect.
+end caption
+
+concise User
+robust Output
+
+
+@0
+Output is OFF
+
+@5
+User --> Output : Set()
+
+@10
+User --> Output : Set()
+
+@15
+Output is ON
+
+User@5<->@15 : 10s
+
+@20
+User --> Output : Set()
+
+@25
+User --> Output : Reset()
+Output is OFF
+
+
+@enduml
