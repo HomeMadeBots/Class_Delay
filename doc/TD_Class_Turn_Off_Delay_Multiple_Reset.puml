@@ -14,11 +14,6 @@ title Class_Turn_Off_Delay multiple //Reset()//
 
 caption
 turn off delay = 10s (//Delay_Duration// = 10000)
-
-If //Reset()// command is call several time (without
-any call to //Set()//) only the first has an effect.
-A call to //Reset()// when output is alredy //OFF// has
-no effect.
 end caption
 
 concise User
