@@ -15,11 +15,6 @@ title Class_Turn_On_Off_Delay nominal behavior
 caption
 turn on delay = 5s (//Delay_Duration// = 5000)
 turn off delay = 10s (//Off_Delay_Duration// = 10000)
-
-After a call to //Set()//, the output takes
-//Delay_Duration// to be //ON//.
-After a call to //Reset()//, the output takes
-//Off_Delay_Duration// to be //OFF//.
 end caption
 
 concise User
