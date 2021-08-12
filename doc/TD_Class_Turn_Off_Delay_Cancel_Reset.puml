@@ -15,9 +15,6 @@ title Class_Turn_Off_Delay cancel //Reset()//
 
 caption
 turn off delay = 10s (//Delay_Duration// = 10000)
-
-After a call to //Reset()//, if //Set()// is called before
-//Delay_Duration//, the output remains //ON//.
 end caption
 
 concise User
