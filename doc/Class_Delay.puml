@@ -1,6 +1,6 @@
 @startuml
 
-!includeurl https://gist.githubusercontent.com/Arnaud-Bonneuil/c317a7a30bed7d64e2b5b1f558ac00cf/raw/sober.plantuml
+!includeurl https://gist.githubusercontent.com/Arnaud-Bonneuil/c317a7a30bed7d64e2b5b1f558ac00cf/raw/sober.puml
 !includeurl https://raw.githubusercontent.com/HomeMadeBots/Class_Triggered_Timer/main/doc/Class_Triggered_Timer.puml
 
 skinparam groupInheritance 2
