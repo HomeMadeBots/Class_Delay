@@ -13,15 +13,16 @@
 
 skinparam groupInheritance 2
 
+Triggered_Timer ..> Time_Is_Up : <<send>>
 
-Delay_Is_Up <.. Class_Delay: <<send>>
+Delay_Is_Up <.. Delay: <<send>>
 
-Class_Delay ..> Time_Is_Up : <<receive>>
+Delay ..> Time_Is_Up : <<receive>>
 
-Class_Delay -up-> "1\rMy_Timer" Class_Triggered_Timer
+Delay -up-> "1\rMy_Timer" Triggered_Timer
 
-Class_Delay <|-- Class_Turn_On_Delay
-Class_Delay <|-- Class_Turn_Off_Delay
-Class_Delay <|-- Class_Turn_On_Off_Delay
+Delay <|-- Turn_On_Delay
+Delay <|-- Turn_Off_Delay
+Delay <|-- Turn_On_Off_Delay
 
 @enduml
