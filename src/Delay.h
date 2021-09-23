@@ -23,9 +23,9 @@ typedef struct {
 } Delay_Var;
 
 typedef struct {
-    void (*set) ( const Class_Delay* );
-    void (*reset) ( const Class_Delay* );
-    void (*timer_is_up) ( const Class_Delay* );
+    void (*set) ( const Delay* );
+    void (*reset) ( const Delay* );
+    void (*timer_is_up) ( const Delay* );
 } Delay_Virtual_Operations;
 
 struct _Delay {
