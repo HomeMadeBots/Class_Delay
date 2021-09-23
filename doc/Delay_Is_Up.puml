@@ -1,0 +1,9 @@
+@startuml
+
+interface Delay_Is_Up <<Event_Interface>>
+{
+  Sent when the delay of a class Delay has ended,
+  i.e. that the output in equal to the input.
+}
+
+@enduml

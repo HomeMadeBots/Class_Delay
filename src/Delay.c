@@ -1,4 +1,4 @@
-#include "Class_Delay.h"
+#include "Delay.h"
 
 #include <stddef.h>
 
@@ -6,7 +6,7 @@
 /*============================================================================*/
 /* Public methods */
 /*============================================================================*/
-bool Delay__Get( const Class_Delay* Me )
+bool Delay__Get( const Delay* Me )
 {
     return Me->var_attr->Is_Output_On;
 }
@@ -15,17 +15,17 @@ bool Delay__Get( const Class_Delay* Me )
 /*============================================================================*/
 /* Virtual operations */
 /*============================================================================*/
-void Delay__Set( const Class_Delay* Me )
+void Delay__Set( const Delay* Me )
 {
     Me->virt_op->set(Me);
 }
 /*----------------------------------------------------------------------------*/
-void Delay__Reset( const Class_Delay* Me )
+void Delay__Reset( const Delay* Me )
 {
     Me->virt_op->reset(Me);
 }
 /*----------------------------------------------------------------------------*/
-void Delay__Timer_Is_Up( const Class_Delay* Me )
+void Delay__Timer_Is_Up( const Delay* Me )
 {
     Me->virt_op->timer_is_up(Me);
 }

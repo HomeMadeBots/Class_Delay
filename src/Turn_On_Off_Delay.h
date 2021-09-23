@@ -1,11 +1,11 @@
-#ifndef CLASS_TURN_ON_OFF_DELAY_H
-#define CLASS_TURN_ON_OFF_DELAY_H
+#ifndef TURN_ON_OFF_DELAY_H
+#define TURN_ON_OFF_DELAY_H
 
 
 /*============================================================================*/
 /* Inclusions */
 /*============================================================================*/
-#include "Class_Delay.h"
+#include "Delay.h"
 
 
 /*============================================================================*/
@@ -13,26 +13,26 @@
 /*============================================================================*/
 typedef struct {
     /* Inheritance */
-    Class_Delay_Var super;
+    Delay_Var super;
 
     bool Is_Input_On;
-} Class_Turn_On_Off_Delay_Var;
+} Turn_On_Off_Delay_Var;
 
 typedef struct {
 
     /* Inheritance */
-    Class_Delay super;
+    Delay super;
 
     /* Configuration_Parameters */
     uint32_t Off_Delay_Duration;
     
-} Class_Turn_On_Off_Delay;
+} Turn_On_Off_Delay;
 
 
 /*============================================================================*/
 /* Virtual operations realization */
 /*============================================================================*/
-extern Class_Delay_Virtual_Operations Turn_On_Off_Delay_Operations;
+extern Delay_Virtual_Operations Turn_On_Off_Delay_Operations;
 
 
 #endif

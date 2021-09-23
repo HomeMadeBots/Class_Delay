@@ -2,7 +2,7 @@
 
 !includeurl https://gist.githubusercontent.com/Arnaud-Bonneuil/c317a7a30bed7d64e2b5b1f558ac00cf/raw/sober.puml
 
-title Class_Turn_On_Delay cancel //Set()//
+title Turn_On_Delay cancel //Set()//
 
 caption
 

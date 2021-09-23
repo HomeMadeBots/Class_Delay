@@ -1,0 +1,8 @@
+@startuml
+
+package Delays [
+  Gathers software elements allowing to apply
+  some delay to the changes of a boolean data.
+]
+
+@enduml

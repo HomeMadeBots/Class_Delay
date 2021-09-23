@@ -1,5 +1,5 @@
-#ifndef CLASS_DELAY_H
-#define CLASS_DELAY_H
+#ifndef DELAY_H
+#define DELAY_H
 
 
 /*============================================================================*/
@@ -10,37 +10,37 @@
 
 
 /* Associated objects */
-#include "Class_Triggered_Timer.h"
+#include "Triggered_Timer.h"
 
 
 /*============================================================================*/
 /* Class */
 /*============================================================================*/
-typedef struct _Class_Delay Class_Delay;
+typedef struct _Delay Delay;
 
 typedef struct {
     bool Is_Output_On;
-} Class_Delay_Var;
+} Delay_Var;
 
 typedef struct {
     void (*set) ( const Class_Delay* );
     void (*reset) ( const Class_Delay* );
     void (*timer_is_up) ( const Class_Delay* );
-} Class_Delay_Virtual_Operations;
+} Delay_Virtual_Operations;
 
-struct _Class_Delay {
+struct _Delay {
 
     /* Variable attributes */
-    Class_Delay_Var* var_attr;
+    Delay_Var* var_attr;
     
     /* Virtual operations */
-    const Class_Delay_Virtual_Operations* virt_op;
+    const Delay_Virtual_Operations* virt_op;
     
     /* Sent events */
     void (*Delay_Is_Up)( void );
     
     /* Associated objects */
-    const Class_Triggered_Timer* My_Timer;
+    const Triggered_Timer* My_Timer;
     
     /* Configuration_Parameters */
     uint32_t Delay_Duration;
@@ -51,17 +51,17 @@ struct _Class_Delay {
 /*============================================================================*/
 /* Public methods */
 /*============================================================================*/
-bool Delay__Get( const Class_Delay* Me );
+bool Delay__Get( const Delay* Me );
 
 
 /*============================================================================*/
 /* Virtual operations */
 /*============================================================================*/
 /* Public methods */
-void Delay__Set( const Class_Delay* Me );
-void Delay__Reset( const Class_Delay* Me );
+void Delay__Set( const Delay* Me );
+void Delay__Reset( const Delay* Me );
 /* Event reception */
-void Delay__Timer_Is_Up( const Class_Delay* Me );
+void Delay__Timer_Is_Up( const Delay* Me );
 
 
 #endif

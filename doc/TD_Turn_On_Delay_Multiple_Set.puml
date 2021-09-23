@@ -10,10 +10,10 @@
   }
 </style>
 
-title Class_Turn_Off_Delay multiple //Reset()//
+title Turn_On_Delay multiple //Set()//
 
 caption
-turn off delay = 10s (//Delay_Duration// = 10000)
+turn on delay = 10s (//Delay_Duration// = 10000)
 end caption
 
 concise User
@@ -25,20 +25,21 @@ Output is OFF
 
 @5
 User --> Output : Set()
-Output is ON
 
 @10
-User --> Output : Reset()
+User --> Output : Set()
 
 @15
-User --> Output : Reset()
+Output is ON
+
+User@5<->@15 : 10s
 
 @20
-Output is OFF
-
-User@10<->@20 : 10s
+User --> Output : Set()
 
 @25
 User --> Output : Reset()
+Output is OFF
+
 
 @enduml

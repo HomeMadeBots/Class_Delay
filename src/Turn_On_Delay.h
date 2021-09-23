@@ -1,11 +1,11 @@
-#ifndef CLASS_TURN_OFF_DELAY_H
-#define CLASS_TURN_OFF_DELAY_H
+#ifndef TURN_ON_DELAY_H
+#define TURN_ON_DELAY_H
 
 
 /*============================================================================*/
 /* Inclusions */
 /*============================================================================*/
-#include "Class_Delay.h"
+#include "Delay.h"
 
 
 /*============================================================================*/
@@ -14,15 +14,15 @@
 typedef struct {
 
     /* Inheritance */
-    Class_Delay super;
+    Delay super;
 
-} Class_Turn_Off_Delay;
+} Turn_On_Delay;
 
 
 /*============================================================================*/
 /* Virtual operations realization */
 /*============================================================================*/
-extern Class_Delay_Virtual_Operations Turn_Off_Delay_Operations;
+extern Delay_Virtual_Operations Turn_On_Delay_Operations;
 
 
 #endif

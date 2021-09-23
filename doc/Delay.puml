@@ -1,0 +1,15 @@
+@startuml
+
+abstract class Delay <<Internal_Design_Class>>
+{
+  Allows to apply some delay to the changes of a boolean data.
+  --
+  + Delay_Duration:uint32
+  --
+  {abstract} + Set()
+  {abstract} + Reset()
+  + Get( OUT output:boolean )
+  {abstract} + Time_Is_Up()
+}
+
+@enduml

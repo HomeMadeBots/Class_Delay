@@ -1,0 +1,27 @@
+@startuml
+
+!includeurl https://gist.githubusercontent.com/Arnaud-Bonneuil/c317a7a30bed7d64e2b5b1f558ac00cf/raw/sober.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Timers/main/doc/Triggered_Timer.puml
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Timers/main/doc/Time_Is_Up.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Delays/main/doc/Delay_Is_Up.puml
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Delays/main/doc/Delay.puml
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Delays/main/doc/Turn_On_Delay.puml
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Delays/main/doc/Turn_Off_Delay.puml
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Delays/main/doc/Turn_On_Off_Delay.puml
+
+skinparam groupInheritance 2
+
+
+Delay_Is_Up <.. Class_Delay: <<send>>
+
+Class_Delay ..> Time_Is_Up : <<receive>>
+
+Class_Delay -up-> "1\rMy_Timer" Class_Triggered_Timer
+
+Class_Delay <|-- Class_Turn_On_Delay
+Class_Delay <|-- Class_Turn_Off_Delay
+Class_Delay <|-- Class_Turn_On_Off_Delay
+
+@enduml

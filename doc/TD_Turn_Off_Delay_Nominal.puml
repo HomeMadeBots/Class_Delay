@@ -10,36 +10,29 @@
   }
 </style>
 
-title Class_Turn_On_Delay multiple //Set()//
+title Turn_Off_Delay nominal behavior
 
 caption
-turn on delay = 10s (//Delay_Duration// = 10000)
+turn off delay = 10s (//Delay_Duration// = 10000)
 end caption
 
 concise User
 robust Output
 
-
 @0
-Output is OFF
+Output is OFF 
 
 @5
 User --> Output : Set()
-
-@10
-User --> Output : Set()
-
-@15
 Output is ON
 
-User@5<->@15 : 10s
+@10
+User --> Output : Reset()
+
 
 @20
-User --> Output : Set()
-
-@25
-User --> Output : Reset()
 Output is OFF
 
+User@10 <->@20 : 10s
 
 @enduml

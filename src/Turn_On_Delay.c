@@ -1,4 +1,4 @@
-#include "Class_Turn_Off_Delay.h"
+#include "Turn_On_Delay.h"
 
 #include <stddef.h>
 
@@ -15,30 +15,29 @@
 /*============================================================================*/
 /* Public methods */
 /*============================================================================*/
-static void Turn_Off_Delay__Set( const Class_Turn_Off_Delay* Me )
+static void Turn_On_Delay__Set( const Turn_On_Delay* Me )
 {
-    
-    Class_Triggered_Timer__Stop( Me_My_Timer );
-    Me_Is_Output_On = true;
-}
-/*----------------------------------------------------------------------------*/
-static void Turn_Off_Delay__Reset( const Class_Turn_Off_Delay* Me )
-{
-    if( false==Class_Triggered_Timer__Is_Active( Me_My_Timer ) )
+    if( false==Triggered_Timer__Is_Active( Me_My_Timer ) )
     {
-        Class_Triggered_Timer__Start(
+        Triggered_Timer__Start(
             Me_My_Timer,
             Me_Delay_Duration );
     }
+}
+/*----------------------------------------------------------------------------*/
+static void Turn_On_Delay__Reset( const Turn_On_Delay* Me )
+{
+    Triggered_Timer__Stop( Me_My_Timer );
+    Me_Is_Output_On = false;
 }
 
 
 /*============================================================================*/
 /* Received events */
 /*============================================================================*/
-static void Turn_Off_Delay__Timer_Is_Up( const Class_Turn_Off_Delay* Me )
+static void Turn_On_Delay__Timer_Is_Up( const Turn_On_Delay* Me )
 {
-    Me_Is_Output_On = false;
+    Me_Is_Output_On = true;
     if( Me_Delay_Is_Up != NULL )
     {
         Me_Delay_Is_Up();
@@ -49,11 +48,11 @@ static void Turn_Off_Delay__Timer_Is_Up( const Class_Turn_Off_Delay* Me )
 /*============================================================================*/
 /* Virtual operations realization */
 /*============================================================================*/
-Class_Delay_Virtual_Operations Turn_Off_Delay_Operations = {
+Delay_Virtual_Operations Turn_On_Delay_Operations = {
     /* set */
-    ( void (*) (const Class_Delay*) )Turn_Off_Delay__Set,
+    ( void (*) (const Delay*) )Turn_On_Delay__Set,
     /* reset */
-    ( void (*) (const Class_Delay*) )Turn_Off_Delay__Reset,
+    ( void (*) (const Delay*) )Turn_On_Delay__Reset,
     /* time_is_up */
-    ( void (*) (const Class_Delay*) )Turn_Off_Delay__Timer_Is_Up
+    ( void (*) (const Delay*) )Turn_On_Delay__Timer_Is_Up
 };

@@ -1,0 +1,9 @@
+@startuml
+
+class Turn_Off_Delay <<Internal_Design_Class>>
+{
+  Allows to reset a boolean value with a delay.
+  The set is immediate.
+}
+
+@enduml
